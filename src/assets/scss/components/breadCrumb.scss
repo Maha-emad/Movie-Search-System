@@ -1,0 +1,17 @@
+@use "../partials/functions" as *;
+@use "../partials/mixins" as *;
+
+.breadcrumb-container {
+    display: flex;
+    margin-bottom: toRem(8);
+    .breadcrumb-link-item {
+        @include text-style-body-small;
+        font-weight: 500;
+        line-height: 16px;
+        color: getColor(primary-200);
+    }
+    .breadcrumb-seperator {
+        line-height: 16px;
+        margin: 0 8px;
+    }
+}

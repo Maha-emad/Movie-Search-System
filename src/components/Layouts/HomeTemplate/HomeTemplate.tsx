@@ -1,15 +1,15 @@
-import variables from "./HomeTemplate.module.scss"  ;  
+import { Header } from '@/components/Header'; 
+import {Cover} from '@/components/Cover'
 
-const HomeTemplate:React.FC<{children?: React.ReactNode}> = ({children}) =>{
-    
-    return (
-      <>
-      <div> 
-        mahameho and 3amorty
-        {children}
-      </div>
-      </>
-    );
-  }
+const HomeTemplate: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+	return (
+		<>
+			<div>
+				<Header /> 
+				<Cover/>
+			</div>
+		</>
+	);
+};
 
 export default HomeTemplate;

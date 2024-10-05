@@ -1,0 +1,43 @@
+@use "../../partials/functions" as *;
+
+.number-card-skeleton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(40) toRem(16);
+    background-color: getColor(grey-900-80);
+    border-radius: toRem(12);
+    width: 100%;
+    overflow: hidden;
+    .number-skeleton {
+        width: 20%;
+        height: toRem(40);
+        border-radius: toRem(8);
+        background: getColor(grey-800);
+        animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+    }
+    .label-skeleton {
+        width: 60%;
+        height: toRem(12);
+        border-radius: toRem(8);
+        margin-top: toRem(16);
+        background: getColor(grey-800);
+        animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+    }
+}
+@for $i from 1 through 4 {
+    .number-card-skeleton:nth-child(#{$i}) {
+        .number-skeleton {
+            animation-delay: #{$i * 0.2}s;
+        }
+        .label-skeleton {
+            animation-delay: #{$i * 0.2}s;
+        }
+    }
+}
+@keyframes shimmer {
+    100% {
+        opacity: 0.1;
+    }
+}

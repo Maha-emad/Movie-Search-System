@@ -1,6 +1,6 @@
 import HTMLHeader from '@/components/HTMLHeader';
 import React from 'react';
-import {HomeTemplate} from '@/components/Layouts';
+import { HomeTemplate } from '@/components/Layouts';
 
 const Index = (): JSX.Element => (
 	<>

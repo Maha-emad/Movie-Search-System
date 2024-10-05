@@ -1,0 +1,12 @@
+@use "../partials/functions" as *;
+.manual-suggestion-popup {
+    h4 {
+        margin-top: 0;
+    }
+    form {
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+    }
+}

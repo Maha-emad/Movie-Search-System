@@ -1,0 +1,62 @@
+@use "../partials/functions" as *;
+.segmented-control {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    background: getColor(black-20);
+    border-radius: toRem(8);
+    margin-bottom: toRem(24);
+    padding: toRem(8);
+    .active-indicator {
+        position: absolute;
+        top: toRem(8);
+        bottom: toRem(8);
+        left: toRem(8);
+        width: toRem(86);
+        background: getColor(primary-400);
+        border-radius: toRem(8);
+        z-index: 1;
+        transition: left 120ms cubic-bezier(0.75, 0.25, 0.25, 0.75), right 120ms cubic-bezier(0.75, 0.25, 0.25, 0.75);
+    }
+    .segmented-group {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+    .segmented-label {
+        color: getColor(grey-400);
+        display: block;
+        font-size: toRem(16);
+        font-weight: 700;
+        line-height: toRem(24);
+        padding: toRem(8) toRem(32);
+    }
+    .segmented-input {
+        display: none;
+        &:checked ~ label {
+            color: getColor(primary-50);
+        }
+        ~ label {
+            color: getColor(grey-400);
+            cursor: pointer;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .segmented-control {
+        padding: toRem(8);
+        .active-indicator {
+            position: absolute;
+            top: toRem(8);
+            bottom: toRem(8);
+            left: toRem(8);
+        }
+        .segmented-label {
+            font-size: toRem(14);
+            font-weight: 700;
+            padding: toRem(8) toRem(16);
+        }
+    }
+}

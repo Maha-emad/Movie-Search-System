@@ -1,0 +1,143 @@
+@use "../../partials/functions" as *;
+
+.card-skeleton {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: getColor(grey-900);
+    padding: toRem(8) toRem(8) toRem(16) toRem(8);
+    width: 100%;
+    border-radius: toRem(12);
+    overflow: hidden;
+    .rating-skeleton {
+        position: absolute;
+        z-index: 3;
+        height: toRem(32);
+        width: toRem(64);
+        top: toRem(16);
+        left: toRem(16);
+        border-radius: toRem(8);
+        background: getColor(black-20);
+        animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+    }
+    .image-skeleton {
+        background: getColor(grey-800);
+        width: 100%;
+        height: toRem(400);
+        border-radius: toRem(8);
+        animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+    }
+    .info-skeleton {
+        padding: toRem(8);
+        margin-top: toRem(16);
+    }
+    .title-skeleton {
+        width: 50%;
+        height: toRem(16);
+        border-radius: toRem(8);
+        background: getColor(grey-800);
+        animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+    }
+    .action-skeleton {
+        margin-top: toRem(24);
+        display: flex;
+        .icon-skeleton {
+            height: toRem(16);
+            width: toRem(16);
+            margin-right: toRem(16);
+            border-radius: toRem(8);
+            background: getColor(grey-800);
+            animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+        }
+        .action-name-skeleton {
+            width: 50%;
+            height: toRem(16);
+            border-radius: toRem(8);
+            background: getColor(grey-800);
+            animation: shimmer 01s cubic-bezier(0.75, 0.25, 0.25, 0.75) infinite alternate;
+        }
+    }
+}
+@for $i from 1 through 8 {
+    .card-skeleton:nth-child(#{$i}) {
+        .image-skeleton {
+            animation-delay: #{$i * 0.1}s;
+        }
+        .title-skeleton {
+            animation-delay: #{$i * 0.1}s;
+        }
+        .action-skeleton {
+            .icon-skeleton {
+                animation-delay: #{$i * 0.1}s;
+            }
+            .action-name-skeleton {
+                animation-delay: #{$i * 0.1}s;
+            }
+        }
+    }
+}
+@keyframes shimmer {
+    100% {
+        opacity: 0.2;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .card-wrapper {
+        .card-image {
+            height: toRem(360);
+            img {
+                height: toRem(360);
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(320);
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(360);
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(320);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(400);
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(320);
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(240);
+        }
+    }
+}
+@media screen and (max-width: 360px) {
+    .card-skeleton {
+        .image-skeleton {
+            height: toRem(400);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use "../partials/functions" as *;
+
+.mh-icon {
+    display: inline-block;
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: getColor(grey-400);
+        display: block;
+    }
+}

@@ -1,7 +1,6 @@
 @use "@/assets/scss/partials/functions" as *;
 @use "@/assets/scss/partials/variables" as *;
-@use "@/assets/scss/partials/variables" as *; 
-@use "@/assets/scss/partials/variables" as *;
+
 
 .nav {
     position: fixed;
@@ -11,11 +10,7 @@
     z-index: 100;
     background: getColor(grey-900-98);
 } 
-.logoContent{
-    display : flex ;  
-    flex-direction: row ;  
-    gap: 6px ;
-}
+
 .navbar {
     width: 90%; 
     z-index: 200;
@@ -24,7 +19,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
     .brand {
         a {
             display: block;

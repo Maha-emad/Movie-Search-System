@@ -1,6 +1,25 @@
-$primary-color: #64ff00;
- 
-:export {
-  primaryColor: $primary-color; 
-}
+@use "@/assets/scss/partials/functions" as *;
 
+
+.index {
+    .header {
+        width: 100%;
+        max-width: 588px;
+    }
+    .searchWrapper {
+        margin-top: 24px;
+    }
+    .segmentedControlWrapper {
+        margin-top: 80px;
+    }
+    .categoryTitle {
+        color: getColor(grey-500);
+        span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+    .listGrid {
+        margin-top: 24px;
+    }
+}

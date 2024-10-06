@@ -1,9 +1,8 @@
-'use client';
 import { FavButton } from '@/components/FavButton';
 import Link from 'next/link';
 import Logo from '@/assets/images/Logo.svg';
 import styles from './Header.module.scss';
-import { Typography } from '@mui/material';
+
 
 export const Header: React.FC = () => {
 	return (
@@ -16,9 +15,7 @@ export const Header: React.FC = () => {
 						</Link>
 					</div>
 
-					<div>
-						<Typography variant="h3">M Flicks</Typography>
-					</div>
+					
 				</div>
 
 				<Link href="#">

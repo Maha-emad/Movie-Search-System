@@ -1,0 +1,1 @@
+export {DetailsBanner} from './DetailsBanner'; 

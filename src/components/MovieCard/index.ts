@@ -1,1 +1,1 @@
-export {MovieCard} from "./MovieCard";
+export {MovieCard} from "./components/MovieCard";

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import '@/assets/scss/global.scss';
-//import "@/assets/scss/mFlicks.scss";
+import "@/assets/scss/mFlicks.scss";
 
 type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;

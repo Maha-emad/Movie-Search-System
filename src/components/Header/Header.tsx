@@ -13,14 +13,19 @@ export const Header: React.FC = () => {
 						<Link href="/">
 							<Logo />
 						</Link>
-					</div>
-
-					
-				</div>
-
+					</div> 
+				</div> 
+               
+			   <div className={`${styles.logoContent}`}>
+               <Link href="#" className={styles.navLink}>
+                <span>Movie Search</span>
+              </Link>
+				
 				<Link href="#">
-					<FavButton />
+				<FavButton/> 
 				</Link>
+			   </div>
+				
 			</div>
 		</nav>
 	);

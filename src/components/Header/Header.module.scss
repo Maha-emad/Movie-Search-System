@@ -29,21 +29,8 @@
             width: auto;
         }
     }
-    .menuContainer {
-        display: flex;
-    }
-    .menu {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        display: flex;
-        align-items: center;
-        li {
-            list-style: none;
-        }
-    }
-
-    .navIink {
+    
+    .navLink {
         display: inline-block;
         padding: toRem(8) toRem(16);
         color: getColor(grey-400);

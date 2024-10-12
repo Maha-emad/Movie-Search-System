@@ -3,7 +3,6 @@
 
 const nextConfig = {
 	reactStrictMode: true,
-	output: 'standalone',
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
@@ -23,7 +22,7 @@ const nextConfig = {
 			{ protocol: 'https', hostname: 'themoviedb.org', port: '', pathname: '/t/p/**' },
 			{ protocol: 'https', hostname: 'image.tmdb.org', port: '', pathname: '/t/p/**' }
 		]
-	}
+	},
 };
 
-module.exports = nextConfig;
+export default nextConfig;

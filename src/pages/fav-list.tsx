@@ -1,11 +1,11 @@
 import HTMLHeader from '@/components/HTMLHeader';
-import { HomeTemplate } from '@/components/Layouts/HomeTemplate';
+import { FavList } from '@/features';
 import React from 'react';
 
 const Index = (): JSX.Element => (
 	<>
-		<HTMLHeader title="Home Page" />
-		<HomeTemplate />
+		<HTMLHeader title="Favorite Page" />
+		<FavList />
 	</>
 );
 

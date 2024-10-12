@@ -1,3 +1,27 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "@features/*/*",
+              "@/features/*/*"
+            ],
+            "message": "usage of private modules not allowed."
+          },
+          {
+            "message": "import useTranslation from @/libs/locale instead."
+          },
+          {
+            "group": ["next/dynamic"],
+            "message":
+              "instead of importing dynamic from next/dynamic use the NoSSR component from @/components/NoSSR"
+          }
+        ]
+      }
+    ]
+  }
 }

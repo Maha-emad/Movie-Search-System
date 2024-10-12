@@ -1,1 +1,0 @@
-export {DetailsBanner} from './DetailsBanner'; 

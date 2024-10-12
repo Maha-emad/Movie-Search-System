@@ -2,7 +2,7 @@
 
 // interface Movie {
  
-//   // Add other movie properties as needed
+//   Add other movie properties as needed
 // }
 
 // interface MovieState {
@@ -17,7 +17,7 @@
 //   movies: [],
 //   favorites: [],
   
-//   // Function to search for movies (mock fetch in this case)
+//   Function to search for movies (mock fetch in this case)
 //   searchMovies: (query: string) => {
 //     fetch(`https://api.example.com/movies?search=${query}`)
 //       .then(response => response.json())
@@ -26,13 +26,12 @@
 //       });
 //   },
   
-//   // Add a movie to favorites
+//   Add a movie to favorites
 //   addToFavorites: (movie) => set((state) => ({
 //     favorites: [...state.favorites, movie]
 //   })),
 
-//   // Remove a movie from favorites
+//   Remove a movie from favorites
 //   removeFromFavorites: (movieId) => set((state) => ({
 //     favorites: state.favorites.filter(movie => movie.id !== movieId)
-//   }))
-// }));
+//   })) 

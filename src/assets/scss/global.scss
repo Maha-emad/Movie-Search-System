@@ -117,7 +117,7 @@ p {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 24px;
     column-gap: 24px;
-    align-items: start; 
+    align-items: flex-start; 
     width : 90% ; 
 }
 

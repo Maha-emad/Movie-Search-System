@@ -1,4 +1,4 @@
-# Movie Search App
+# 🎬 Movie Search App
 
 A **Next.js** movie search application that allows users to search for movies, view details, and manage their favorite movies. This app utilizes a public movie API for data and features state management with **Zustand**, responsive design, and local storage for persisting the favorite movies list.
 

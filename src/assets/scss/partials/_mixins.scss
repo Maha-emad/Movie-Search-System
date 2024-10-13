@@ -1,0 +1,141 @@
+@use "variables" as *;
+@use "functions" as *;
+
+
+@mixin colors {
+    @each $name, $color in $colors {
+        --#{$name}: #{$color};
+    }
+}
+
+@mixin text-style-caption {
+    font-size: toRem(14);
+    font-weight: 500;
+    font-style: normal;
+    line-height: toRem(16);
+    text-decoration: none;
+}
+@mixin text-style-heading-h-1 {
+    font-size: toRem(64);
+    font-weight: 600;
+    font-style: normal;
+    line-height: toRem(80);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-2 {
+    font-size: toRem(48);
+    font-weight: 600;
+    font-style: normal;
+    line-height: toRem(56);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-3 {
+    font-size: toRem(32);
+    font-weight: 600;
+    font-style: normal;
+    line-height: toRem(40);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-4 {
+    font-size: toRem(24);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(32);
+    letter-spacing: -0.015em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-5 {
+    font-size: toRem(20);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(24);
+    letter-spacing: -0.015em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-6 {
+    font-size: toRem(16);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(24);
+    letter-spacing: -0.015em;
+    text-decoration: none;
+}
+@mixin text-style-body-large {
+    font-size: toRem(20);
+    font-weight: 500;
+    font-style: normal;
+    line-height: toRem(32);
+    text-decoration: none;
+}
+@mixin text-style-body-regular {
+    font-size: toRem(16);
+    font-weight: 500;
+    font-style: normal;
+    line-height: toRem(24);
+    text-decoration: none;
+}
+@mixin text-style-body-small {
+    font-size: toRem(14);
+    font-weight: 500;
+    font-style: normal;
+    line-height: toRem(24);
+    text-decoration: none;
+}
+@mixin text-style-body-extra-small {
+    font-size: toRem(12);
+    font-weight: 500;
+    font-style: normal;
+    line-height: toRem(16);
+    text-decoration: none;
+}
+@mixin text-style-overline-regular {
+    font-size: toRem(14);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(16);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+@mixin text-style-overline-small {
+    font-size: toRem(12);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(16);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+}
+@mixin text-style-link-regular {
+    font-size: toRem(16);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(24);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+@mixin text-style-link-small {
+    font-size: toRem(14);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(24);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+@mixin text-style-link-extra-small {
+    font-size: toRem(12);
+    font-weight: 700;
+    font-style: normal;
+    line-height: toRem(16);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+@mixin text-style-heading-h-1-sm {
+    font-size: toRem(40);
+    font-weight: 600;
+    font-style: normal;
+    line-height: toRem(48);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}

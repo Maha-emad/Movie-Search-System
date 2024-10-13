@@ -1,0 +1,46 @@
+@use "@/assets/scss/partials/functions" as *;
+
+.index {
+    .header {
+        width: 100%;
+        max-width: 588px;
+    }
+    .searchWrapper { 
+        left: 100px ; 
+        width: 500px;
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row; 
+        
+        justify-content: space-between;
+
+        .btn { 
+            margin-left: 20px; 
+            margin-top: 35px;
+            width: 200px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            outline: none;
+            border: none;
+            background: getColor(primary-400);
+            color: getColor(white-100);
+            padding: toRem(16) toRem(32);
+            border-radius: toRem(12);
+            font-size: toRem(16);
+            line-height: toRem(24);
+    
+            &:hover {
+                color: getColor(success-500);
+            }
+    
+            &:focus {
+                color: getColor(success-400);
+                box-shadow: 0 1px 0 0 getColor(success-400);    
+             }
+        }
+    }
+    .listGrid {
+        margin-top: 24px;
+    }
+}

@@ -1,0 +1,205 @@
+@use "@/assets/scss/partials/functions" as *;
+@use "@/assets/scss/partials/variables" as *;
+
+.cardWrapper {  
+    position: relative;
+    border-radius: toRem(12);
+    overflow: hidden; 
+    width : 100% ; 
+    
+    &:hover {
+        .cardBg .img {
+            transform: scale(2);
+        }
+        .cardImage {
+            .img {
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+        }
+    }
+    .cardContent {  
+        padding: toRem(8);
+        background-color: getColor(grey-900-98);
+        border-radius: toRem(12);
+        width: 100%;
+
+        .cardRating { 
+            padding : 200px ;  
+            position: absolute;
+            z-index: 2;
+            top: toRem(16);
+            left: toRem(16);
+            background: getColor(black-75);
+            border-radius: toRem(8);
+            padding: toRem(4) toRem(8);
+            display: flex; 
+            justify-content : center ;
+            
+            .mhIcon {  
+                stroke: getColor(warning-500);
+                height: toRem(16);
+                width: toRem(16); 
+        
+                width: 24px;
+                height: 24px;
+                fill: none;
+                stroke: getColor(grey-400);
+                display: block; 
+            }
+            
+            span {
+                margin-left: toRem(4);
+                color: getColor(warning-500);
+            }
+        }  
+
+        .cardImage {
+            display: inline-block;
+            width: 100%;
+            height: toRem(400);
+            border-radius: toRem(8);
+            overflow: hidden;
+            .img {
+                width: 100%;
+                height: toRem(400);
+                object-fit: fill;
+                transition: transform 300ms animationBeizer();
+            }
+        }
+    }
+    
+    .cardInfo { 
+        display : flex ; 
+        flex-direction : row ; 
+        justify-content:space-between ;  
+        padding: toRem(8);
+        margin-bottom: toRem(8);
+        .title {
+            color: getColor(grey-50);
+        }
+        .cardAction {
+            margin-top: 16px;
+            &.success {
+                cursor: initial;
+                pointer-events: none;
+            }
+        }
+        .hidden {
+            display: none;
+        }
+    }  
+
+    .favIcon{ 
+        margin-right : 20px ;  
+        display : flex ;  
+        cursor: pointer;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .favIcon.clicked {
+        transform: rotate(360deg); 
+        
+      }
+
+    .cardDetails{
+        display : flex ; 
+        flex-direction : column ;  
+        justify-content : space-between ; 
+    } 
+} 
+
+@media screen and (max-width: 1200px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(360);
+            .img {
+                height: toRem(360);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(320);
+            .img {
+                height: toRem(320);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(360);
+            .img {
+                height: toRem(360);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(320);
+            .img {
+                height: toRem(320);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(400);
+            .img {
+                height: toRem(400);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(320);
+            .img {
+                height: toRem(320);
+            }
+        }
+        .cardInfo {
+            margin-top: toRem(8);
+            .title {
+                color: getColor(grey-50);
+                font-size: toRem(14);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(240);
+            .img {
+                height: toRem(240);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .cardWrapper {
+        .cardImage {
+            height: toRem(400);
+            .img {
+                height: toRem(400);
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function getColor($color-name) {
+  @return var(--#{$color-name});
+}
+@function toRem($value) {
+  $remValue: math.div($value, 16) + rem;
+  @return $remValue;
+}
+
+@function animationBeizer() {
+  @return cubic-bezier(0.75, 0.25, 0.25, 0.75);
+}

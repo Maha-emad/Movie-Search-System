@@ -1,1 +1,1 @@
-export {FavList} from "./Components/FavList";
+export { FavList } from './Components/FavList';

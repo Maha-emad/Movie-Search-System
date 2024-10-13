@@ -1,5 +1,5 @@
 import HTMLHeader from '@/components/HTMLHeader';
-import { HomeTemplate } from '@/components/Layouts/HomeTemplate';
+import { Layout, HomeTemplate } from '@/components/Layouts';
 import React from 'react';
 
 const Index = (): JSX.Element => (
@@ -11,4 +11,4 @@ const Index = (): JSX.Element => (
 
 export default Index;
 
-Index.getLayout = (page: React.ReactElement) => <>{page}</>;
+Index.getLayout = (page: React.ReactElement) => <Layout>{page}</Layout>;

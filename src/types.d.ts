@@ -1,31 +1,46 @@
-export interface MovieType {
+export interface MovieListType {
 	id: string;
 	title: string;
-	voteAverage: number;
 	backdropPath: string;
+	voteAverage: number;
 	overview: string;
 	posterPath: string;
 	originalTitle: string;
-    releaseDate: string
+	originalName: string;
+	releaseDate: string;
 }
+
+export interface MovieType extends MovieListType {
+	runtime: number;
+	genres: string[];
+	cast: string[];
+	director: string;
+	tagline: string;
+}
+
 export interface MovieApiType {
 	id: string;
 	title: string;
-	adult: string;
 	backdrop_path: string;
-	genre_ids: number[];
-	original_language: string;
-	original_title: string;
+	original_name: string;
+	vote_average: number;
 	overview: string;
-	popularity: number;
 	poster_path: string;
 	release_date: string;
-	video: boolean;
-	vote_average: number;
-	vote_count: number;
-    original_name?: string;
+	runtime: number;
+	original_title: string;
+	tagline: string;
+	genres: { id: number; name: string }[];
 }
-export interface MovieListApiType {
-	page: number;
-	results: MovieApiType[];
+
+export interface CreditsApiType {
+	cast: {
+		name: string;
+		known_for_department: string;
+		popularity: number;
+	}[];
+	crew: {
+		name: string;
+		job: string;
+	}[];
 }

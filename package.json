@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prebuild": "bun run lint",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@babel/core": "^7.25.7",
@@ -17,7 +18,9 @@
     "@mui/icons-material": "^6.1.2",
     "@mui/material": "^6.1.2",
     "@mui/material-nextjs": "^6.1.2",
+    "@next/eslint-plugin-next": "^14.2.15",
     "axios": "^1.7.7",
+    "eslint-plugin-next": "^0.0.0",
     "next": "14.2.14",
     "npm": "^10.9.0",
     "react": "^18",
@@ -29,14 +32,29 @@
     "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
     "@svgr/webpack": "^8.1.0",
+    "@types/eslint__eslintrc": "^2.1.2",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.14",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "eslint": "^9.12.0",
+    "eslint-config-next": "^14.2.15",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "file-loader": "^6.2.0",
-    "typescript": "^5"
+    "prettier": "^3.3.3",
+    "stylelint": "^16.10.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-prettier": "^5.0.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
   },
   "browserslist": [
     ">0.3%",

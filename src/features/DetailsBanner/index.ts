@@ -1,1 +1,1 @@
-export {DetailsBanner} from './components/DetailsBanner'; 
+export { DetailsBanner } from './components/DetailsBanner';

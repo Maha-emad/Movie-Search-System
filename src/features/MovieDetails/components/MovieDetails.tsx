@@ -1,77 +1,81 @@
-import PageCover from '@/assets/images/DetailsPageCover.svg'; 
-import styles from './MovieDetails.module.scss'; 
-import StarIcon from "@/assets/images/StarIcon.svg"
-import { useRouter } from 'next/router';
+import styles from './MovieDetails.module.scss';
+import StarIcon from '@/assets/images/StarIcon.svg';
+import { appConfig } from '@/config';
+import { CircularProgress } from '@mui/material';
+import { useGetMovieByIdQuery } from '../hooks/useGetMovieByIdQuery';
+import { DetailsBanner } from '@/features/DetailsBanner';
+import Image from 'next/image';
 
 export const MovieDetails: React.FC = () => {
-  const router = useRouter();
-    return(
-     
-      <div className={styles.detailsWrapper}>
-        <div className={`${styles.poster}`}>
-          <PageCover className={styles.img}/>
-        </div>
+	const { movie, isLoading, isError, error } = useGetMovieByIdQuery();
 
-        <div className={styles.detailsContainer}>
-          <div className={`tagline-container ${styles.detail}`}>
-            <h4 className={styles.tagline}>tagline heeeeree</h4>
-          </div>
-          <div className={`description-container ${styles.detail}`}>
-           <p className="label">
-          description heeeree
-          </p>
-         </div>
-          <div className={`${styles.rating} ${styles.detail}`}>
-            <StarIcon/>
-            <p>2.24</p>
-          </div>
+	if (isLoading) {
+		return <CircularProgress />;
+	}
 
-          <div className={`type-status ${styles.detailsRow}`}>
-            <div className={`type ${styles.detail}`}>
-              <p className="label">Director</p>
-              {/* <p className="large">Movie</p> */}
-              
-            </div>
+	if (isError || !movie) {
+		return <CircularProgress />;
+	}
 
-           
-          </div>
+	return (
+		<div className=" page container">
+            <DetailsBanner
+				movieTitle={movie.title}
+				originalTitle={movie.originalTitle}
+				originalName={movie.originalName}
+				backdropPath={movie.backdropPath}
+			/>
+			<div className={styles.detailsWrapper}>
+				<div className={`${styles.poster}`}>
+					<Image src={`${appConfig.posterUrl}${movie.posterPath}`} alt="poster" width={500} height={750} />
+				</div>
 
-          <div className={`dates ${styles.detailsRow}`}>
-            <div className={`release-date ${styles.detail}`}>
-              <p className="label">Release date</p>
-              <p className="large">12-8-2023</p>
-            </div>
+				<div className={styles.detailsContainer}>
+					<div className={`tagline-container ${styles.detail}`}>
+						<h4 className={styles.tagline}>{movie.tagline}</h4>
+					</div>
+					<div className={`description-container ${styles.detail}`}>
+						<p className="large">{movie.overview}</p>
+					</div>
+					<div className={`${styles.rating} ${styles.detail}`}>
+						<StarIcon />
+						<p>{movie.voteAverage}</p>
+					</div>
 
+					<div className={`type-status ${styles.detailsRow}`}>
+						<div className={`type ${styles.detail}`}>
+							<p className="label">Director</p>
+							<p className="large">{movie.director}</p>
+						</div>
+					</div>
 
-          </div>
-          <div className={`season-episodes ${styles.detailsRow}`}>
-            <div className={`seasons ${styles.detail}`}>
-              <p className="label">Cast</p>
-              {/* <p className="large">no. of seasons</p> */}
-            </div>
-    
-          </div>
-          
-          <div className={`${styles.runTime} ${styles.detail}`}>
-          <p className="label">Run time</p>
-           <p className="large">
-          120 minutes
-        </p>
-        
-      </div>
-          <div className={`genre ${styles.detail}`}>
-            <p className="label">Genres</p>
-            <p className={styles.genreWrapper}>
-              <span
-                className="genre large"
-              >
-                genre heereee
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    
-    
-    );
-}
+					<div className={`dates ${styles.detailsRow}`}>
+						<div className={`release-date ${styles.detail}`}>
+							<p className="label">Release date</p>
+							<p className="large">{movie.releaseDate}</p>
+						</div>
+					</div>
+					<div className={`season-episodes ${styles.detailsRow}`}>
+						<div className={`seasons ${styles.detail}`}>
+							<p className="label">Cast</p>
+							<p className="large">{movie.cast.toString()}</p>
+						</div>
+					</div>
+
+					<div className={`${styles.runTime} ${styles.detail}`}>
+						<p className="label">Run time</p>
+						<p className="large">{movie.runtime} minutes</p>
+					</div>
+					<div className={`genre ${styles.detail}`}>
+						<p className="label">Genres</p>
+						<p className={styles.genreWrapper}>
+							<p className="large">{movie.genres.join(', ')}</p>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		
+	);
+};

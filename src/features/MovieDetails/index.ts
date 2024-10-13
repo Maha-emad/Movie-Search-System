@@ -1,1 +1,1 @@
-export {MovieDetails} from './components/MovieDetails'
+export { MovieDetails } from './components/MovieDetails';

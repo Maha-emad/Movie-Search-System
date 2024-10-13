@@ -1,1 +1,1 @@
-export {SearchCard} from './components/SearchCard'
+export { SearchCard } from './components/SearchCard';

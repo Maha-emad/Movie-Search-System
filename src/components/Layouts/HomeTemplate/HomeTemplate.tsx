@@ -1,15 +1,7 @@
-import { Navbar } from '@/components/Layouts/Navbar';
-import { Footer } from '@/components/Footer';
-import { SearchCard } from '@/features/SearchCard/components/SearchCard';
+import { HomeCard } from '@/features/HomeCard/components/HomeCard';
 
 const HomeTemplate: React.FC = () => {
-	return (
-		<>
-			<Navbar />
-			<SearchCard />
-			<Footer />
-		</>
-	);
+	return <HomeCard />;
 };
 
 export default HomeTemplate;

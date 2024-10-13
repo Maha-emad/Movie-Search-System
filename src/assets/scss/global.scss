@@ -88,20 +88,9 @@ Link {
 }
 
 .image {
-    background-image: url("/placeholder.png");
+    background-image: url("/img/placeholder.png");
     background-size: cover;
     background-position: center;
-}
-
-.statusBar {
-    width: 100%;
-    margin-left: -16px;
-    margin-top: -20px;
-    height: 20px;
-    position: sticky;
-    top: -20px;
-    z-index: 10;
-    background: getColor(grey-900);
 }
 
 h1 {
@@ -121,48 +110,7 @@ p {
     width : 90% ; 
 }
 
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: getColor(grey-900-40);
-    z-index: 102;
-}
 
-.popupWrapper {
-    position: relative;
-    padding: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: getColor(grey-900-80);
-    border: 1px solid getColor(grey-800);
-    backdrop-filter: blur(40px);
-    border-radius: 24px;
-    width: 100%;
-    max-width: 560px;
-    text-align: center;
-    h4 {
-        margin: 24px 0;
-    }
-}
-
-.popupClose {
-    position: absolute;
-    right: 24px;
-    top: 24px;
-    display: flex;
-    align-self: flex-end;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    background: getColor(black-30);
-}
 
 @supports (backdrop-filter: blur(24px)) {
     .bgBlur {

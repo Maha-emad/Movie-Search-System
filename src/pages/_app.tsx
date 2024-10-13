@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { MovieStoreProvider } from '@/providers/MovieStoreProvider';
-
-import '@/assets/scss/global.scss';
-import '@/assets/scss/mFlicks.scss';
+import "@/assets/scss/global.scss";
+import "@/assets/scss/mFlicks.scss";
+import type { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { NotificationStoreProvider, MovieStoreProvider, SearchStoreProvider } from "@/providers";
+import NotificationBar from "@/components/NotificationBar/NotificationBar";
 
 type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
 	getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -18,8 +18,15 @@ export default function RootLayout({ Component, pageProps }: AppPropsWithLayout)
 	const getLayout = Component.getLayout || ((page) => page);
 
 	return (
-		<MovieStoreProvider>
-			<AppRouterCacheProvider>{getLayout(<Component {...pageProps} />)}</AppRouterCacheProvider>
-		</MovieStoreProvider>
+		<NotificationStoreProvider>
+			<MovieStoreProvider>
+				<SearchStoreProvider>
+					<AppRouterCacheProvider>
+						<NotificationBar />
+						{getLayout(<Component {...pageProps} />)}
+					</AppRouterCacheProvider>
+				</SearchStoreProvider>
+			</MovieStoreProvider>
+		</NotificationStoreProvider>
 	);
 }

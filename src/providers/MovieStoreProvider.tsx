@@ -3,7 +3,7 @@
 import { type ReactNode, createContext, useRef, useContext } from 'react';
 import { useStore } from 'zustand';
 
-import { type MovieStore, createMovieStore, initMovieStore } from '@/store/useMovieListStore';
+import { type MovieStore, createMovieStore, initMovieStore } from '@/store/useMovieStore';
 
 export type MovieStoreApi = ReturnType<typeof createMovieStore>;
 

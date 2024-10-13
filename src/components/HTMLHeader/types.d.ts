@@ -1,4 +1,4 @@
-export interface HTMLHeaderProps{
-    title?: string;
-    children?: React.ReactNode;
+export interface HTMLHeaderProps {
+	title?: string;
+	children?: React.ReactNode;
 }

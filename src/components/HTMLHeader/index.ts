@@ -1,4 +1,3 @@
-import HTMLHeader from "./HTMLHeader";
+import HTMLHeader from './HTMLHeader';
 
 export default HTMLHeader;
-

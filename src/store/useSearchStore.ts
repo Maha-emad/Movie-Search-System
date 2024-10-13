@@ -1,18 +1,30 @@
-import { create } from 'zustand';
+import { createStore } from 'zustand';
 
-type State = {
+type SearchState = {
 	searchTerm: string;
 };
 
-type Action = {
-	setSearchTerm: (searchTerm:State['searchTerm']) => void;
-	getSearchTerm: ()=> State['searchTerm']
+type SearchAction = {
+	setSearchTerm: (searchTerm: SearchState['searchTerm']) => void;
+	getSearchTerm: () => SearchState['searchTerm'];
 };
 
-const useSearchState = create<State & Action>((set, get) => ({
-	searchTerm: '',
-    setSearchTerm: (searchTerm) => set(()=> ({searchTerm})),
-	getSearchTerm: ()=> get().searchTerm
-}));
+const defaultInitState: SearchState = {
+	searchTerm: ''
+};
 
-export { useSearchState };
+export const initSearchState = (): SearchState => {
+	return {
+		searchTerm: ''
+	};
+};
+
+export type SearchStore = SearchAction & SearchState;
+
+export const createSearchStore = (initState: SearchState = defaultInitState) => {
+	return createStore<SearchStore>()((set, get) => ({
+		...initState,
+		setSearchTerm: (searchTerm: SearchState['searchTerm']) => set(() => ({ searchTerm })),
+		getSearchTerm: () => get().searchTerm
+	}));
+};

@@ -1,14 +1,16 @@
 import HTMLHeader from '@/components/HTMLHeader';
+import { Layout, FavListTemplate } from '@/components/Layouts';
 import { FavList } from '@/features';
 import React from 'react';
 
-const Index = (): JSX.Element => (
+const FavListPage = (): JSX.Element => (
 	<>
-		<HTMLHeader title="Favorite Page" />
-		<FavList />
+		<HTMLHeader title="Favorite Page" /> 
+		
+		<FavListTemplate />
 	</>
 );
 
-export default Index;
+export default FavList;
 
-Index.getLayout = (page: React.ReactElement) => <>{page}</>;
+FavListPage.getLayout = (page: React.ReactElement) => <Layout>{page}</Layout>;

@@ -7,13 +7,9 @@ import { DetailsBanner } from '@/features/DetailsBanner';
 import Image from 'next/image';
 
 export const MovieDetails: React.FC = () => {
-	const { movie, isLoading, isError, error } = useGetMovieByIdQuery();
+	const { movie, isLoading, isError } = useGetMovieByIdQuery();
 
-	if (isLoading) {
-		return <CircularProgress />;
-	}
-
-	if (isError || !movie) {
+	if (isLoading || isError || !movie) {
 		return <CircularProgress />;
 	}
 

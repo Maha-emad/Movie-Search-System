@@ -1,17 +1,16 @@
 import { appConfig } from "@/config";
 import { useMovieStore } from "@/providers/MovieStoreProvider";
-import { useNotificationStore } from "@/providers/NotificationStoreProvider";
-import { NotificationType } from "@/store/useNotificationStore";
 import { MovieApiType, MovieListType } from "@/types";
 import { parsMovieList } from "@/utils";
 import axios from "axios";
 import { useState } from "react";
+
 type AxiosMovieList = {
 	page: number;
 	results: MovieApiType[];
 };
+
 export const useGetMoviesList = () => {
-	const { showNotification } = useNotificationStore((state) => state);
 	const { setLoading, setList } = useMovieStore((state) => state);
 	const [isError, setIsError] = useState<boolean>(false);
 	const [error, setError] = useState<string>("");

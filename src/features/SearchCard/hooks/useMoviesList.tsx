@@ -1,46 +1,45 @@
-import { appConfig } from '@/config';
-import { useMovieStore } from '@/providers/MovieStoreProvider';
-import { MovieListApiType, MovieType } from '@/types';
-import axios from 'axios';
-import { useState } from 'react';
+import { appConfig } from "@/config";
+import { useMovieStore } from "@/providers/MovieStoreProvider";
+import { MovieApiType, MovieListType } from "@/types";
+import { parsMovieList } from "@/utils";
+import axios from "axios";
+import { useState } from "react";
+
+type AxiosMovieList = {
+	page: number;
+	results: MovieApiType[];
+};
+
 
 export const useGetMoviesList = () => {
 	const { setLoading, setList } = useMovieStore((state) => state);
-	const [isError, setIsError] = useState<Boolean>(false);
-	const [error, setError] = useState<String>('');
+	const [isError, setIsError] = useState<boolean>(false);
+	const [error, setError] = useState<string>("");
 
-	const fetchData = async (page:number) => {
+	const fetchData = async (page: number) => {
 		setLoading(true);
 
 		try {
-			const url = `${appConfig.baseUrl}/discover/movie?language=en-US&page=${page}`;
+			const url = `${appConfig.baseUrl}/discover/movie`;
 			const options = {
 				headers: {
-					accept: 'application/json',
+					accept: "application/json",
 					Authorization: `Bearer ${appConfig.api_token}`
+				},
+				params: {
+					language: "en-US",
+					page
 				}
 			};
+			const resMovie: MovieApiType[] = (await axios.get<AxiosMovieList>(url, options)).data.results;
+			const parsedMovie: MovieListType[] = resMovie.map((movie) => parsMovieList(movie));
 
-			const res: MovieType[] = (await axios.get<MovieListApiType>(url, options)).data.results.map((movie) => ({
-				id: movie.id,
-				title: movie.title || movie.original_name || '',
-				voteAverage: movie.vote_average,
-				backdropPath: movie.backdrop_path,
-				overview: movie.overview,
-				posterPath: movie.poster_path,
-				releaseDate: movie.release_date,
-				originalTitle: movie.original_title
-			}));
-
-			setList(res);
+			setList(parsedMovie);
 			setIsError(false);
-			setError('');
+			setError("");
 		} catch (err: any) {
-			if (axios.isAxiosError(err)) {
-				setIsError(true);
-				setError(err.message);
-			}
-		} finally {
+			setIsError(true);
+			setError(err.message);
 			setLoading(false);
 		}
 	};

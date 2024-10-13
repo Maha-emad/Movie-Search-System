@@ -6,8 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useEffect, useState } from 'react';
 
 export const SearchCard: React.FC = () => {
-	const { fetchMovie, data, error, isError } = useGetFilteredList();
-	console.log("🚀 ~ data:", data);
+	const { fetchMovie, data } = useGetFilteredList();
 	const [currentPage, setCurrentPage] = useState<number>(1);
 
 	useEffect(() => {

@@ -1,7 +1,6 @@
 import { appConfig } from '@/config';
-import { useMovieStore } from '@/providers/MovieStoreProvider';
 import { useSearchStore } from '@/providers/SearchStoreProvider';
-import { MovieApiType, MovieListType, MovieType } from '@/types';
+import { MovieApiType, MovieListType } from '@/types';
 import { parsMovieList } from '@/utils';
 import axios from 'axios';
 import { useState } from 'react';
@@ -12,7 +11,7 @@ type AxiosMovieList = {
 export const useGetFilteredList = () => {
 	const [isError, setIsError] = useState<boolean>(false);
 	const [error, setError] = useState<string>('');
-	const [loading, setLoading] = useState<boolean>(false);
+	const [_, setLoading] = useState<boolean>(false);
 	const [data, setData] = useState<MovieListType[]>([]);
 	const { getSearchTerm } = useSearchStore((state) => state);
 

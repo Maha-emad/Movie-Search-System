@@ -9,11 +9,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { appConfig } from "@/config";
 import { Error404 } from "@/components/Error404";
-import { NotificationType } from "@/store/useNotificationStore";
 
 export const HomeCard: React.FC = () => {
 	const router = useRouter();
-	const { fetchMovie, error, isError } = useGetMoviesList();
+	const { fetchMovie, isError } = useGetMoviesList();
 
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const { getList } = useMovieStore((state) => state);

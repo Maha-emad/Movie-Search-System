@@ -102,6 +102,10 @@ A **Next.js** movie search application that allows users to search for movies, v
 - **Using Next.js Built-In Optimizations:**  
   By leveraging Next.js's features like server-side rendering , the app delivers fast loading times and enhanced SEO. This was especially beneficial for pages like the Movie Details page.
 
+-  **API Rate Limits:**  
+  The API used has rate limits, which could potentially affect the user experience when searching for multiple movies in quick succession. To mitigate this, I implemented debouncing on the search input field to reduce the number of API calls, ensuring smoother performance while staying within rate limits.
+  
+
 ---
 
 ## Instructions on How to Install and Run the Application Locally

@@ -84,7 +84,7 @@ A **Next.js** movie search application that allows users to search for movies, v
   Next.js Image component was used to optimize the loading of movie posters and backdrops. This improves performance, especially on slower network connections, by serving optimized and appropriately sized images.
 
 - **Lazy Loading and Code Splitting:**  
-  Dynamic imports and lazy loading were used to load the Movie Details and Favorites components only when required. This helps in reducing the initial bundle size and improves page load performance.
+  Lazy loading were used to load the Movie Details and Favorites components only when required. This helps in reducing the initial bundle size and improves page load performance.
 
 ### 2. **Challenges Faced and Solutions**
 
@@ -97,8 +97,6 @@ A **Next.js** movie search application that allows users to search for movies, v
 - **Error Handling and Loading States:**  
   During API requests, handling errors gracefully was important for a smooth user experience. I implemented loading spinners and skeleton screens to keep the user informed while data is being fetched. Additionally, clear error messages are shown when API requests fail or no results are found for the search.
 
-- **API Rate Limits:**  
-  The API used has rate limits, which could potentially affect the user experience when searching for multiple movies in quick succession. To mitigate this, I implemented debouncing on the search input field to reduce the number of API calls, ensuring smoother performance while staying within rate limits.
 
 ### 3. **Performance Optimization**
 - **Using Next.js Built-In Optimizations:**  
